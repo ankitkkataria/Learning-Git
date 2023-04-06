@@ -1,0 +1,60 @@
+-GIT NOTES-
+
+// First thing you have to do is config git so whenever someone looks at your changes they can see who made them.
+git config --global user.name "ankit"
+git config --global user.email "ankitkkataria@gmail.com"
+git config --global color.ui auto
+
+// When we make a new project the first thing we do is 
+git init . // Makes a git repository inside the current directory (git repository is the .git/ folder inside a project this repository tracks all changes made to files in your project, building a history over time. Meaning, if you delete the .git/ folder, then you delete your project’s history)
+
+// Right here you should make three files in the current folder index.html app.css app.js just to be able to use the commands down and for them to work well.
+
+git status // git status shows the current status of everything in the current folder. 
+           // Formal definition :- git status shows the current state of your git working directory and staging area.
+
+// Here i've created a folder called testingRecursive and put a file in it called test.js
+
+git add filename.ext // This will add the current file to the staging area.
+git rm --cached filename.ext // This will unstage the current file from the staging area.
+git add . // This will recursively add everything downwards from this current folder whether that be folders(may themselves contain files/folders) or files to the staging area. (when i say downwards it also means that i'm saying current folder files not just the folders in the current directory).
+git rm -r --cached . // This will recursively remove everything downwards from this current location whether that be folders(may themselves contain files/folders) or files from the staging area.
+git add -A // This is not something you should use regularly but this is to add every single file and folder in the directory where the git repository is created (basically .git folder is what i'm calling the git repository) where git add . only added things downwards git add -A will add everything downwards as well as upwards.
+
+// After adding files to the staging area the next step is to commit what commit means is creating a savepoint.
+git commit -m "descriptive message between these quotes" // Using this command will take all the files/folders currently present in the staging area and commit them with the descriptive messsage and create a savepoint for us.
+
+git log // Shows you the list of all the commits/savepoints.
+git show (Put git commit unique hash here without brackets) // Will show you all the files that were in that commit this will also show you if you added some line or deleted some line.
+
+// Now you can put a line in index.js like console.log("Adding something random");
+// Now when you say git status it will show that there is one modified file.
+// Now you can also restore this modified file to the version of this file that was present at the time of that commit.
+git restore filename.ext // Used for restoring a file.
+
+git diff // This command will show you if there is a modified file then what are the changes in that file from the version of this file that was present the time of that commit.
+
+// Incase you end up making a unneccsary commit or forget to put in the right message you can also delete commits
+// Removing the last commit
+// To remove the last commit from git, you can simply run 
+git reset --hard HEAD^ // If you are removing multiple commits from the top, you can run git reset --hard HEAD~2 to remove the last two commits. You can increase the number to remove even more commits.
+// If you want to "uncommit" the commits, but keep the changes around for reworking, remove the "--hard": git reset HEAD^ which will evict the commits from the branch and from the index, but leave the working tree around.
+
+// Okay let's say you made a error writing the message of your commit then you don't have to delete the commit itself and start again just use the amend command (amend as a word means making small change)
+git commit --amend -m "Added text color to the body" // This line will change the message of the last commit to Added text color to the body it doesn't matter what it was prior to that point.
+
+
+-GITHUB-
+
+// Github is the hosting platform basically it's provides us remote server space where we can store our code.
+// First create a new repository by going to github.com like right now i made Learning-Git repository there that's basically like a folder in remote server.
+// As soon as you make it you'll see these commands on the site itself.
+
+// To pust an existing repository from the command line
+
+git branch -M main // First change the current branch from master to main.
+git remote add origin git@github.com:ankitkkataria/Learning-Git.git // This will tell our terminal okay that's the location of the remote repository where we have to store the stuff persent in this folder.
+git push -u origin main // This will actually go ahead and push/store the files exactly the way they were by the time of the latest commit we made.
+
+// Once a local folder has been pushed once then inorder to push again you don't need to use the entire command git push -u origin main just git push will suffice.
+
