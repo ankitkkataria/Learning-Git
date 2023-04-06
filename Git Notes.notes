@@ -58,3 +58,24 @@ git push -u origin main // This will actually go ahead and push/store the files 
 
 // Once a local folder has been pushed once then inorder to push again you don't need to use the entire command git push -u origin main just git push will suffice.
 
+// Now you know how to store files from your pc to the remote server now we will learn how to get files from the remote server to your pc.
+// Well inorder to demonstrate that i'll go ahead and add the readme description on github that will make the readme.md file there and commit changes.
+// Now if you look at git log here in your local machine you won't see the latest commit that you did there on github.
+// Now inorder to get everything you have currently on the remote server you can just do git pull it will bring the new readme file here as well.
+
+// Now you can go and edit main.cpp in github and commit changes and you can again try git pull those changes will be reflected here as well immediately.
+
+Branch :- Branch represents an independent line of development.
+
+git branch // Tells me which branch i'm on currently in my local machine.
+git branch -r // Tells me about the remote branch i'm currently on (r represents remote).
+git branch -a // Will show you all the branches in your local machine as well as remote.
+git branch feature-a // Will make a new branch from our current branch we're on which is main in our case creating a new branch just means that you've copied everything from your main branch to this new branch.
+// But now if you try to make changes to any code you'll still be making changes to your main branch cause you've not yet switched to the new feature-a branch.
+// Inorder to do that do this
+git checkout branch_name // Will take you to the branch_name you specified.
+git checkout feature-a // This will switch us to the feature-a branch any changes you make here won't affect your main branch.
+// If you wanna swap between two branches like currently i'm on feature-a branch and i want to go back to the main branch to do that just do
+git checkout - // This will take you back to main branch and if you run it again you'll be back to the feature-a branch
+// You can also use git checkout main to go back to main branch.
+
