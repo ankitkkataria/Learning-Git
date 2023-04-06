@@ -65,7 +65,7 @@ git push -u origin main // This will actually go ahead and push/store the files 
 
 // Now you can go and edit main.cpp in github and commit changes and you can again try git pull those changes will be reflected here as well immediately.
 
-Branch :- Branch represents an independent line of development.
+Branch :- Branch represents an independent line of development (Must look at the branches.png to get a accurate picture of what they mean).
 
 git branch // Tells me which branch i'm on currently in my local machine.
 git branch -r // Tells me about the remote branch i'm currently on (r represents remote).
@@ -78,4 +78,10 @@ git checkout feature-a // This will switch us to the feature-a branch any change
 // If you wanna swap between two branches like currently i'm on feature-a branch and i want to go back to the main branch to do that just do
 git checkout - // This will take you back to main branch and if you run it again you'll be back to the feature-a branch
 // You can also use git checkout main to go back to main branch.
+
+// After swithing to the feature-a branch any changes you make here won't be reflected in the main branch.
+// Let's just make a commit here after adding a new file by the message -m "random stuff"
+// When you type git push for the first time it will say since you're on a new branch you must do it this way git push --set-upstream origin feature-a
+// After using the above command the new branch will be visible on github as well.
+// Now if you see git log on both branches the latest commit you'll see on feature-a branch will be the random stuff commit but on main branch you won't find that commit that just shows that they are now different branches.
 
