@@ -15,4 +15,11 @@ int main()
     {
         hashmap[i]++;
     }
+    
+    int num = 5;
+    while (num > 0 ) 
+    {
+        cout << "printing random stuff" << endl;
+        num--;
+    }
 }
