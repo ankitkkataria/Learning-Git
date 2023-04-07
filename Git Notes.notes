@@ -71,6 +71,7 @@ git branch // Tells me which branch i'm on currently in my local machine.
 git branch -r // Tells me about the remote branch i'm currently on (r represents remote).
 git branch -a // Will show you all the branches in your local machine as well as remote.
 git branch feature-a // Will make a new branch from our current branch we're on which is main in our case creating a new branch just means that you've copied everything from your main branch uptil now to this new branch.
+
 // But now if you try to make changes to any code you'll still be making changes to your main branch cause you've not yet switched to the new feature-a branch.
 // Inorder to do that do this
 git checkout branch_name // Will take you to the branch_name you specified.
@@ -93,3 +94,4 @@ git branch -d branch_name // Will delete the current branch
 git log --oneline // Gives a more compact history of all the previous commits to the current branch you're on.
 // Also when merging branches you can certainly do while being on main branch git merge feature-a but you should never do that it might introduce errors in your system 
 // So, Always merge through pull request on github and see if reviewers approve of it.
+
