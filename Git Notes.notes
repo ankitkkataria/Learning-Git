@@ -89,3 +89,7 @@ git checkout -b branch_name // This command will go ahead and make a new branch 
 git branch -d branch_name // Will delete the current branch 
 
 // main and master branch are the exact same thing it's just that main is the new naming convention for master branch in all the old projects you'll find that it has master branch not the main branch but they mean the same thing just remember that.
+
+git log --oneline // Gives a more compact history of all the previous commits to the current branch you're on.
+// Also when merging branches you can certainly do while being on main branch git merge feature-a but you should never do that it might introduce errors in your system 
+// So, Always merge through pull request on github and see if reviewers approve of it.
